@@ -86,15 +86,18 @@
 
 
 
+<meta name="description" content="JSONP">
 <meta name="keywords" content="前端,js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="详解JSONP">
 <meta property="og:url" content="http://yoursite.com/2019/04/11/详解JSONP/index.html">
 <meta property="og:site_name" content="YH">
+<meta property="og:description" content="JSONP">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-11T09:38:01.966Z">
+<meta property="og:updated_time" content="2019-04-11T10:57:12.591Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="详解JSONP">
+<meta name="twitter:description" content="JSONP">
 
 
 
@@ -351,7 +354,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  1.1k 字
                 </span>
               
 
@@ -367,7 +370,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -388,7 +391,37 @@
       
 
       
-        
+        <p><strong>JSONP</strong><br><a id="more"></a></p>
+<h1 id="同源政策"><a href="#同源政策" class="headerlink" title="同源政策"></a>同源政策</h1><p>它的含义是指，A网页的数据，B网页请求不到，除非这两个网页”同源”。所谓”同源”指的是”三个相同”。</p>
+<ul>
+<li>协议相同</li>
+<li>域名相同</li>
+<li>端口相同<br>目前，如果非同源，共有三种行为受到限制：</li>
+<li>Cookie、LocalStorage 和 IndexDB 无法读取</li>
+<li>DOM 无法获得</li>
+<li>AJAX 请求不能发送<br>以上只是简略讲解，具体的可以参考<a href="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html" target="_blank" rel="noopener">浏览器同源政策及其规避方法</a></li>
+</ul>
+<h1 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h1><p><strong>JSONP（JSON with Padding）是数据格式的一种“使用模式”，可以让网页从别的网域要数据</strong></p>
+<h1 id="JSONP的由来"><a href="#JSONP的由来" class="headerlink" title="JSONP的由来"></a>JSONP的由来</h1><p>因为同源策略，导致无法请求另一个网站的数据，我们只能用form表单进行请求，但是form会刷新页面，用户体验很不好，所以以前的程序员们就开始了疯狂的实验<br>他们发现了link 、img、a、script等可以发送请求。经过种种实验总结出了以下几点：</p>
+<ul>
+<li>用 form 可以发请求，但是会刷新页面或新开页面</li>
+<li>用 a 可以发 get 请求，但是也会刷新页面或新开页面</li>
+<li>用 img 可以发 get 请求，但是只能以图片的形式展示</li>
+<li>用 link 可以发 get 请求，但是只能以 CSS等形式展示<br><strong>最终他们选用 script 利用脚本语言进行get请求</strong><br><strong>请求方：yyyh.info的前端程序员（浏览器）</strong><br><strong>响应方：zzzq.info的后端程序员（服务器）</strong></li>
+</ul>
+<ol>
+<li>请求方创建<code>script</code>，<code>src</code>指向响应方，同时传入一个查询参数<code>?callbackName=yyy</code></li>
+<li>响应方根据查询参数<code>callbackName</code>，构造形如<br> (1). yyy.call(undefined, ‘你要的数据’)<br> (2). yyy(‘你要的数据’)<br> 这样的响应</li>
+<li>浏览器接收到响应，就会执行<code>yyy.call(undefined, &#39;你要的数据&#39;)</code></li>
+<li>那么请求方就知道了他要的数据<br><strong>这就是JSONP</strong></li>
+</ol>
+<h1 id="原生js实现JSONP"><a href="#原生js实现JSONP" class="headerlink" title="原生js实现JSONP"></a>原生js实现JSONP</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//前端</span></span><br><span class="line">button.addEventListener(<span class="string">'click'</span>, (e)=&gt;&#123;</span><br><span class="line">  <span class="keyword">let</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>)</span><br><span class="line">  <span class="keyword">let</span> functionName = <span class="string">'frank'</span> + <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random()*<span class="number">10000000</span> ,<span class="number">10</span>)</span><br><span class="line">  <span class="built_in">window</span>[functionName] = <span class="function"><span class="keyword">function</span>(<span class="params">&#123; <span class="regexp">//</span>每次请求之前搞出一个随机的函数</span></span></span><br><span class="line"><span class="function"><span class="params">      amount.innerText = amount.innerText - <span class="number">0</span> - <span class="number">1</span></span></span></span><br><span class="line"><span class="function"><span class="params">  &#125;</span></span></span><br><span class="line"><span class="function"><span class="params">  script.src = <span class="string">'/pay?callback='</span> + functionName</span></span></span><br><span class="line"><span class="function"><span class="params">  document.body.appendChild(script</span>)</span></span><br><span class="line"><span class="function">  <span class="title">script</span>.<span class="title">onload</span> = <span class="title">function</span>(<span class="params">e</span>)</span>&#123; <span class="comment">// 状态码是200-299则表示成功</span></span><br><span class="line">    e.currentTarget.remove()</span><br><span class="line">    <span class="keyword">delete</span>.window[functionName] <span class="comment">//请求完了就干掉这个随机函数</span></span><br><span class="line">  &#125;</span><br><span class="line">  script.onerror = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;  <span class="comment">// 状态码大于等于400则表示失败</span></span><br><span class="line">    e.currentTarget.remove()</span><br><span class="line">    <span class="keyword">delete</span>.window[functionName]   <span class="comment">// 请求完了就干掉这个随机函数</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//后端</span></span><br><span class="line"><span class="keyword">if</span>(path === <span class="string">'/pay'</span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> amount = fs.readFileSync(<span class="string">'./db'</span>,<span class="string">'utf-8'</span>)</span><br><span class="line">  amount -= <span class="number">1</span></span><br><span class="line">  fs.writeFileSync(<span class="string">'./db'</span>,amount)</span><br><span class="line">  <span class="keyword">let</span> callbackName = query.callback</span><br><span class="line">  response.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'application/javasctipt'</span>)</span><br><span class="line">  response.write(<span class="string">`</span></span><br><span class="line"><span class="string">    $(callbackName).call(undefined,'success')</span></span><br><span class="line"><span class="string">  `</span>)</span><br><span class="line">  response.end()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="jQuery实现JSONP"><a href="#jQuery实现JSONP" class="headerlink" title="jQuery实现JSONP"></a>jQuery实现JSONP</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">"http://zzzq.info:8001/pay"</span>,</span><br><span class="line">    dataType: <span class="string">"jsonp"</span>,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params"> response </span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(response === <span class="string">'success'</span>)&#123;</span><br><span class="line">            amount.innerText = amount.innerText - <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="JSONP小知识"><a href="#JSONP小知识" class="headerlink" title="JSONP小知识"></a>JSONP小知识</h1><p>##（一）安全问题<br>使用远程网站的script标签会让远程网站得以注入任何的内容至网站里。如果远程的网站有JavaScript注入漏洞，原来的网站也会受到影响。<br>现在有一个正在进行项目在定义所谓的JSON-P严格安全子集，使浏览器可以对MIME类别是“application/json-p”请求做强制处理。如果回应不能被解析为严格的JSON-P，浏览器可以丢出一个错误或忽略整个回应。</p>
+<p>##（二）跨站请求伪造<br>粗略的JSONP部署很容易受到跨站伪造请求（CSRF/XSRF）的攻击。因为HTML script标签在浏览器里不遵守同源策略，恶意网页可以要求并获取属于其他网站的JSON数据。当用户正登录那个其他网站时，上述状况使得该恶意网站得以在恶意网站的环境下操作该JSON数据，可能泄漏用户的密码或是其他敏感数据。</p>
+<p>只有在该JSON数据含有不该泄漏给第三方的隐密数据，且服务器仅靠浏览器的同源策略阻挡不正常要求的时候这才会是问题。若服务器自己决定要求的专有性，并只在要求正常的情况下输出数据则没有问题。只靠Cookie并不够决定要求是合法的，这很容易受到跨站请求伪造攻击。</p>
+<h1 id="JSONP小问题"><a href="#JSONP小问题" class="headerlink" title="JSONP小问题"></a>JSONP小问题</h1><p><strong>请问 JSONP 为什么不支持 POST 请求</strong><br>答：<br>1.因为JSONP是通过动态创建script实现的<br>2.动态创建scrip只能用GET，不能使用POST</p>
+
       
     </div>
     
@@ -489,8 +522,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -561,6 +603,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#同源政策"><span class="nav-number">1.</span> <span class="nav-text">同源政策</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSONP"><span class="nav-number">2.</span> <span class="nav-text">JSONP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSONP的由来"><span class="nav-number">3.</span> <span class="nav-text">JSONP的由来</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原生js实现JSONP"><span class="nav-number">4.</span> <span class="nav-text">原生js实现JSONP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery实现JSONP"><span class="nav-number">5.</span> <span class="nav-text">jQuery实现JSONP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSONP小知识"><span class="nav-number">6.</span> <span class="nav-text">JSONP小知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSONP小问题"><span class="nav-number">7.</span> <span class="nav-text">JSONP小问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -588,7 +646,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10.2k</span>
+    <span title="Site words total count">11.3k</span>
   
 </div>
 
