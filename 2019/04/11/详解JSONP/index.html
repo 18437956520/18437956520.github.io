@@ -86,18 +86,15 @@
 
 
 
-<meta name="description" content="jQuery 官网jQuery 中文文档">
 <meta name="keywords" content="前端,js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jQuery">
-<meta property="og:url" content="http://yoursite.com/2019/03/30/jQuery/index.html">
+<meta property="og:title" content="详解JSONP">
+<meta property="og:url" content="http://yoursite.com/2019/04/11/详解JSONP/index.html">
 <meta property="og:site_name" content="YH">
-<meta property="og:description" content="jQuery 官网jQuery 中文文档">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-01T06:38:50.135Z">
+<meta property="og:updated_time" content="2019-04-11T09:38:01.966Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery">
-<meta name="twitter:description" content="jQuery 官网jQuery 中文文档">
+<meta name="twitter:title" content="详解JSONP">
 
 
 
@@ -127,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/30/jQuery/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/11/详解JSONP/">
 
 
 
 
 
-  <title>jQuery | YH</title>
+  <title>详解JSONP | YH</title>
   
 
 
@@ -271,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/30/jQuery/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/11/详解JSONP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yyyh">
@@ -288,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">jQuery</h1>
+          <h1 class="post-title" itemprop="name headline">详解JSONP</h1>
         
 
         <div class="post-meta">
@@ -300,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-30T21:49:52+08:00">
-                2019-03-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-11T17:12:22+08:00">
+                2019-04-11
               </time>
             
 
@@ -354,7 +351,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  289 字
+                  0 字
                 </span>
               
 
@@ -391,17 +388,7 @@
       
 
       
-        <h1 id="jQuery-官网"><a href="#jQuery-官网" class="headerlink" title="jQuery 官网"></a>jQuery <a href="https://jquery.com/" target="_blank" rel="noopener">官网</a></h1><h1 id="jQuery-中文文档"><a href="#jQuery-中文文档" class="headerlink" title="jQuery 中文文档"></a>jQuery <a href="https://www.jquery123.com/" target="_blank" rel="noopener">中文文档</a></h1><a id="more"></a>
-<h1 id="面试题1"><a href="#面试题1" class="headerlink" title="面试题1"></a>面试题1</h1><p>题目：<br><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">&lt;ul&gt;</span></span><br><span class="line">    <span class="section">&lt;li&gt;</span><span class="section">&lt;/li&gt;</span></span><br><span class="line">    <span class="section">&lt;li&gt;</span><span class="section">&lt;/li&gt;</span></span><br><span class="line"><span class="section">&lt;/ul&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>请写出 $(‘li’) 的结构</p>
-<p>答案示例：<br>$(‘li’) 是一个对象，它自身的 key 有 xxx，它的原型（共享属性）为 xxx.prototype，xxx.prototype 的 key 有 xxx、xxx 和 xxx</p>
-<p>答案：<br>提示：console.dir($(‘li’))<br>$(‘li’)是一个对象，它自身的key有0、1、length、prevObject、proto,它的原型（共享属性）Object.prototype,Object.prototype的key有constructor、hasOwnProperty、isPrototypeof、propertyIsEnumerable、toLocaleString、valueOf</p>
-<h1 id="面试题2"><a href="#面试题2" class="headerlink" title="面试题2"></a>面试题2</h1><p>题目：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">id</span>=x&gt;&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">var</span> <span class="selector-tag">div</span> = document.getElementById(<span class="string">'x'</span>)</span><br><span class="line"><span class="selector-tag">var</span> <span class="variable">$div</span> = $(<span class="string">'#x'</span>)</span><br></pre></td></tr></table></figure>
-<p>请说出 div 和 $div 的联系和区别</p>
-<p>参考答题结构：<br>div 和 $div 的联系是：<br>只要这样这样这样就可以把 div 变成 $div<br>只要那样那样那样就可以把 $div 变成 div<br>div 和 $div 的区别是：<br>div 的属性和方法有 xxx xxx xxx<br>$div 的 属性和方法有 xxx xxx xxx</p>
-<p>答案：<br>div 和 $div 的联系是：<br>只要$(div)可以把 div 变成 $div<br>只要$div[0]就可以把 $div 变成 div<br>div 和 $div 的区别是：<br>div 的属性和方法有 innerText lastChild classLIst className<br>$div 的 属性和方法有 length add addBack after ajaxComplete</p>
-
+        
       
     </div>
     
@@ -442,8 +429,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/27/函数/" rel="next" title="函数">
-                <i class="fa fa-chevron-left"></i> 函数
+              <a href="/2019/04/07/JSONP/" rel="next" title="JSONP">
+                <i class="fa fa-chevron-left"></i> JSONP
               </a>
             
           </div>
@@ -451,10 +438,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/01/初探jQuery/" rel="prev" title="初探jQuery">
-                初探jQuery <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -506,17 +489,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -586,22 +560,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery-官网"><span class="nav-number">1.</span> <span class="nav-text">jQuery 官网</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery-中文文档"><span class="nav-number">2.</span> <span class="nav-text">jQuery 中文文档</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面试题1"><span class="nav-number">3.</span> <span class="nav-text">面试题1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面试题2"><span class="nav-number">4.</span> <span class="nav-text">面试题2</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
