@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="YH">
 <meta property="og:description" content="JSONP是什么？">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-11T07:59:42.706Z">
+<meta property="og:updated_time" content="2019-04-11T08:01:36.378Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSONP">
 <meta name="twitter:description" content="JSONP是什么？">
@@ -354,7 +354,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  214 字
+                  213 字
                 </span>
               
 
@@ -402,7 +402,7 @@
 <p><strong>这就是JSONP</strong></p>
 <p><strong>约定：</strong><br><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">callbackName</span> -&gt;</span> callback</span><br><span class="line"><span class="function"><span class="title">yyy</span> -&gt;</span> 随机数 yyyh12321341242134()</span><br></pre></td></tr></table></figure></p>
 <p><strong>jQuery实现</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">"http://zzzq.info:8001/pay"</span>,</span><br><span class="line">    dataType: <span class="string">"jsonp"</span>,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params"> response </span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(response === <span class="string">'success'</span>)&#123;</span><br><span class="line">            amount.innerText = amount.innerText - <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p><strong>面试题</strong><br>请问 JSONP 为什么不支持 POST 请求<br><em>答： 1.因为JSONP是通过动态创建script实现的 2.动态创建scrip只能用GET，不能使用POST</em></p>
+<p><strong>面试题</strong><br><strong>请问 JSONP 为什么不支持 POST 请求</strong><br>答：<br>1.因为JSONP是通过动态创建script实现的<br>2.动态创建scrip只能用GET，不能使用POST</p>
 
       
     </div>
