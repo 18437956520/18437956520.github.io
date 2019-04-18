@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="立即执行函数定义  我们不想要全局变量 我们要使用局部变量 ES5中，只有函数有局部变量 于是我们声明一个 function xxx, 然后 xxx.call() 这个时候 xxx 是全局变量 所以我们不能给函数命名 于是 function(){}.call() 但是 Chrome 会报错语法错误 有一种方法可以正确使用 !function(){}.call() 因为我们不在乎这个匿名函数的返回值">
+<meta name="description" content="立即执行函数定义">
 <meta name="keywords" content="前端,js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="立即执行函数">
 <meta property="og:url" content="http://yoursite.com/2019/04/18/立即执行函数/index.html">
 <meta property="og:site_name" content="YH">
-<meta property="og:description" content="立即执行函数定义  我们不想要全局变量 我们要使用局部变量 ES5中，只有函数有局部变量 于是我们声明一个 function xxx, 然后 xxx.call() 这个时候 xxx 是全局变量 所以我们不能给函数命名 于是 function(){}.call() 但是 Chrome 会报错语法错误 有一种方法可以正确使用 !function(){}.call() 因为我们不在乎这个匿名函数的返回值">
+<meta property="og:description" content="立即执行函数定义">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-18T03:18:53.038Z">
+<meta property="og:updated_time" content="2019-04-18T03:23:58.726Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="立即执行函数">
-<meta name="twitter:description" content="立即执行函数定义  我们不想要全局变量 我们要使用局部变量 ES5中，只有函数有局部变量 于是我们声明一个 function xxx, 然后 xxx.call() 这个时候 xxx 是全局变量 所以我们不能给函数命名 于是 function(){}.call() 但是 Chrome 会报错语法错误 有一种方法可以正确使用 !function(){}.call() 因为我们不在乎这个匿名函数的返回值">
+<meta name="twitter:description" content="立即执行函数定义">
 
 
 
@@ -391,18 +391,18 @@
       
 
       
-        <p><strong>立即执行函数定义</strong></p>
+        <p><strong>立即执行函数定义</strong><br><a id="more"></a></p>
 <ol>
 <li>我们不想要全局变量</li>
 <li>我们要使用局部变量</li>
 <li>ES5中，只有函数有局部变量</li>
-<li>于是我们声明一个 function xxx, 然后 xxx.call()</li>
-<li>这个时候 xxx 是全局变量</li>
+<li>于是我们声明一个<code>function xxx</code>, 然后<code>xxx.call()</code></li>
+<li>这个时候 <code>xxx</code> 是全局变量</li>
 <li>所以我们不能给函数命名</li>
-<li>于是 function(){}.call()</li>
-<li>但是 Chrome 会报错语法错误</li>
-<li>有一种方法可以正确使用 !function(){}.call()</li>
-<li>因为我们不在乎这个匿名函数的返回值，所以加一个！取反没有关系</li>
+<li>于是 <code>function(){}.call()</code></li>
+<li>但是 <code>Chrome</code> 会报错语法错误</li>
+<li>有一种方法可以正确使用 <code>!function(){}.call()</code></li>
+<li>因为我们不在乎这个匿名函数的返回值，所以加一个<code>!</code>取反没有关系</li>
 </ol>
 
       
