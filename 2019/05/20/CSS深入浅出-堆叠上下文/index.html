@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="前端,js,">
+  <meta name="keywords" content="前端,CSS,">
 
 
 
@@ -86,18 +86,20 @@
 
 
 
-<meta name="description" content="JSONP是什么？">
-<meta name="keywords" content="前端,js">
+<meta name="description" content="堆叠上下文是HTML元素的三维概念，这些HTML元素在一条假想的相对于面向（电脑屏幕的）视窗或者网页的用户的z轴上延伸，HTML元素依据其自身属性按照优先级顺序占用层叠上下文的空间。">
+<meta name="keywords" content="前端,CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JSONP">
-<meta property="og:url" content="http://yoursite.com/2019/04/07/JSONP/index.html">
+<meta property="og:title" content="CSS深入浅出-堆叠上下文">
+<meta property="og:url" content="http://yoursite.com/2019/05/20/CSS深入浅出-堆叠上下文/index.html">
 <meta property="og:site_name" content="YH">
-<meta property="og:description" content="JSONP是什么？">
+<meta property="og:description" content="堆叠上下文是HTML元素的三维概念，这些HTML元素在一条假想的相对于面向（电脑屏幕的）视窗或者网页的用户的z轴上延伸，HTML元素依据其自身属性按照优先级顺序占用层叠上下文的空间。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-11T08:27:40.559Z">
+<meta property="og:image" content="http://yoursite.com/images/微信截图_20190520121856.png">
+<meta property="og:updated_time" content="2019-05-20T04:21:12.789Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JSONP">
-<meta name="twitter:description" content="JSONP是什么？">
+<meta name="twitter:title" content="CSS深入浅出-堆叠上下文">
+<meta name="twitter:description" content="堆叠上下文是HTML元素的三维概念，这些HTML元素在一条假想的相对于面向（电脑屏幕的）视窗或者网页的用户的z轴上延伸，HTML元素依据其自身属性按照优先级顺序占用层叠上下文的空间。">
+<meta name="twitter:image" content="http://yoursite.com/images/微信截图_20190520121856.png">
 
 
 
@@ -127,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/07/JSONP/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/20/CSS深入浅出-堆叠上下文/">
 
 
 
 
 
-  <title>JSONP | YH</title>
+  <title>CSS深入浅出-堆叠上下文 | YH</title>
   
 
 
@@ -271,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/07/JSONP/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/20/CSS深入浅出-堆叠上下文/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yyyh">
@@ -288,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JSONP</h1>
+          <h1 class="post-title" itemprop="name headline">CSS深入浅出-堆叠上下文</h1>
         
 
         <div class="post-meta">
@@ -300,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-07T19:40:06+08:00">
-                2019-04-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-20T08:54:20+08:00">
+                2019-05-20
               </time>
             
 
@@ -323,8 +325,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端学习/" itemprop="url" rel="index">
-                    <span itemprop="name">前端学习</span>
+                  <a href="/categories/CSS深入浅出/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS深入浅出</span>
                   </a>
                 </span>
 
@@ -354,7 +356,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  213 字
+                  228 字
                 </span>
               
 
@@ -391,18 +393,21 @@
       
 
       
-        <h1 id="JSONP是什么？"><a href="#JSONP是什么？" class="headerlink" title="JSONP是什么？"></a>JSONP是什么？</h1><a id="more"></a>
-<p><strong>请求方：yyyh.info的前端程序员（浏览器）</strong><br><strong>响应方：zzzq.info的后端程序员（服务器）</strong></p>
-<ol>
-<li>请求方创建<code>script</code>，<code>src</code>指向响应方，同时传入一个查询参数<code>?callbackName=yyy</code></li>
-<li>响应方根据查询参数<code>callbackName</code>，构造形如<br> (1). yyy.call(undefined, ‘你要的数据’)<br> (2). yyy(‘你要的数据’)<br> 这样的响应</li>
-<li>浏览器接收到响应，就会执行<code>yyy.call(undefined, &#39;你要的数据&#39;)</code></li>
-<li>那么请求方就知道了他要的数据</li>
-</ol>
-<p><strong>这就是JSONP</strong></p>
-<p><strong>约定：</strong><br><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">callbackName</span> -&gt;</span> callback</span><br><span class="line"><span class="function"><span class="title">yyy</span> -&gt;</span> 随机数 yyyh12321341242134()</span><br></pre></td></tr></table></figure></p>
-<p><strong>jQuery实现</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">"http://zzzq.info:8001/pay"</span>,</span><br><span class="line">    dataType: <span class="string">"jsonp"</span>,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params"> response </span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(response === <span class="string">'success'</span>)&#123;</span><br><span class="line">            amount.innerText = amount.innerText - <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p><strong>面试题</strong><br><strong>请问 JSONP 为什么不支持 POST 请求</strong><br>答：<br>1.因为JSONP是通过动态创建script实现的<br>2.动态创建scrip只能用GET，不能使用POST</p>
+        <p>堆叠上下文是HTML元素的三维概念，这些HTML元素在一条假想的相对于面向（电脑屏幕的）视窗或者网页的用户的z轴上延伸，HTML元素依据其自身属性按照优先级顺序占用层叠上下文的空间。<br><a id="more"></a></p>
+<ul>
+<li>根元素 (HTML)</li>
+<li>z-index 值不为 “auto”的 绝对/相对定位</li>
+<li>一个 z-index 值不为 “auto”的 flex 项目 (flex item)，即：父元素 display: flex|- inline-flex</li>
+<li>opacity 属性值小于 1 的元素（参考 the specification for opacity）</li>
+<li>transform 属性值不为 “none”的元素</li>
+<li>mix-blend-mode 属性值不为 “normal”的元素</li>
+<li>filter值不为“none”的元素</li>
+<li>perspective值不为“none”的元素</li>
+<li>isolation 属性被设置为 “isolate”的元素</li>
+<li>position: fixed</li>
+<li>在 will-change 中指定了任意 CSS 属性，即便你没有直接指定这些属性的值（参考 这篇文章）</li>
+<li>-webkit-overflow-scrolling 属性被设置 “touch”的元素<br><img src="/images/微信截图_20190520121856.png" alt></li>
+</ul>
 
       
     </div>
@@ -431,7 +436,7 @@
           
             <a href="/tags/前端/" rel="tag"># 前端</a>
           
-            <a href="/tags/js/" rel="tag"># js</a>
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
           
         </div>
       
@@ -444,8 +449,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/05/面试小结1/" rel="next" title="面试小结Ⅰ">
-                <i class="fa fa-chevron-left"></i> 面试小结Ⅰ
+              <a href="/2019/05/19/CSS深入浅出-文档流与盒模型/" rel="next" title="CSS文档流与盒模型">
+                <i class="fa fa-chevron-left"></i> CSS文档流与盒模型
               </a>
             
           </div>
@@ -453,10 +458,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/11/详解JSONP/" rel="prev" title="详解JSONP">
-                详解JSONP <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -508,17 +509,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -588,22 +580,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JSONP是什么？"><span class="nav-number">1.</span> <span class="nav-text">JSONP是什么？</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
