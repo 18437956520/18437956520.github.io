@@ -394,7 +394,7 @@
         <h1 id="什么是REM"><a href="#什么是REM" class="headerlink" title="什么是REM"></a>什么是REM</h1><h1 id="REM跟EM的区别又是什么"><a href="#REM跟EM的区别又是什么" class="headerlink" title="REM跟EM的区别又是什么"></a>REM跟EM的区别又是什么</h1><a id="more"></a>
 <p><code>rem</code>是基于<code>html</code>元素的字体大小来决定，而<code>em</code>则根据使用它的元素的大小决定</p>
 <h1 id="手机端方案的特点"><a href="#手机端方案的特点" class="headerlink" title="手机端方案的特点"></a>手机端方案的特点</h1><p>所有手机显示的界面都是一样的，只是大小不同<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> rem == html font-size == viewport width</span><br></pre></td></tr></table></figure></p>
-<h1 id="使用-JS-动态调整-REM"><a href="#使用-JS-动态调整-REM" class="headerlink" title="使用 JS 动态调整 REM"></a>使用 JS 动态调整 REM</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> pageWidth = <span class="built_in">window</span>.innerWidth</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.write(<span class="string">'&lt;style&gt;html&#123;font-size:'</span>+pageWidth+<span class="string">'px;&#125;&lt;/style&gt;'</span>)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="使用-JS-动态调整-REM"><a href="#使用-JS-动态调整-REM" class="headerlink" title="使用 JS 动态调整 REM"></a>使用 JS 动态调整 REM</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> pageWidth = <span class="built_in">window</span>.innerWidth</span></span><br><span class="line"><span class="handlebars"><span class="xml">    document.write('<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"><span class="selector-tag">html</span>&#123;<span class="attribute">font-size</span>:<span class="string">'+pageWidth+'</span>px;&#125;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>')</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><a href="http://js.jirengu.com/xoqadocuqu/2/edit?html,css,output" target="_blank" rel="noopener">示例</a></p>
 <h1 id="REM-可以与其他单位同时存在"><a href="#REM-可以与其他单位同时存在" class="headerlink" title="REM 可以与其他单位同时存在"></a>REM 可以与其他单位同时存在</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">0.5rem</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="在-SCSS-里使用-PX2REM"><a href="#在-SCSS-里使用-PX2REM" class="headerlink" title="在 SCSS 里使用 PX2REM"></a>在 SCSS 里使用 PX2REM</h1><ul>
@@ -465,6 +465,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/22/CSS深入浅出-表单美化/" rel="prev" title="CSS深入浅出-表单美化">
+                CSS深入浅出-表单美化 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -541,7 +545,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
