@@ -86,20 +86,18 @@
 
 
 
-<meta name="description" content="堆叠上下文是HTML元素的三维概念，这些HTML元素在一条假想的相对于面向（电脑屏幕的）视窗或者网页的用户的z轴上延伸，HTML元素依据其自身属性按照优先级顺序占用层叠上下文的空间。">
+<meta name="description" content="什么是BFC">
 <meta name="keywords" content="前端,CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS深入浅出-堆叠上下文">
-<meta property="og:url" content="http://yoursite.com/2019/05/20/CSS深入浅出-堆叠上下文/index.html">
+<meta property="og:title" content="CSS深入浅出-BFC">
+<meta property="og:url" content="http://yoursite.com/2019/05/20/CSS深入浅出-BFC/index.html">
 <meta property="og:site_name" content="YH">
-<meta property="og:description" content="堆叠上下文是HTML元素的三维概念，这些HTML元素在一条假想的相对于面向（电脑屏幕的）视窗或者网页的用户的z轴上延伸，HTML元素依据其自身属性按照优先级顺序占用层叠上下文的空间。">
+<meta property="og:description" content="什么是BFC">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/微信截图_20190520121856.png">
-<meta property="og:updated_time" content="2019-05-20T04:21:12.789Z">
+<meta property="og:updated_time" content="2019-05-21T11:28:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS深入浅出-堆叠上下文">
-<meta name="twitter:description" content="堆叠上下文是HTML元素的三维概念，这些HTML元素在一条假想的相对于面向（电脑屏幕的）视窗或者网页的用户的z轴上延伸，HTML元素依据其自身属性按照优先级顺序占用层叠上下文的空间。">
-<meta name="twitter:image" content="http://yoursite.com/images/微信截图_20190520121856.png">
+<meta name="twitter:title" content="CSS深入浅出-BFC">
+<meta name="twitter:description" content="什么是BFC">
 
 
 
@@ -129,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/20/CSS深入浅出-堆叠上下文/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/20/CSS深入浅出-BFC/">
 
 
 
 
 
-  <title>CSS深入浅出-堆叠上下文 | YH</title>
+  <title>CSS深入浅出-BFC | YH</title>
   
 
 
@@ -273,7 +271,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/20/CSS深入浅出-堆叠上下文/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/20/CSS深入浅出-BFC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yyyh">
@@ -290,7 +288,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS深入浅出-堆叠上下文</h1>
+          <h1 class="post-title" itemprop="name headline">CSS深入浅出-BFC</h1>
         
 
         <div class="post-meta">
@@ -302,7 +300,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-20T08:54:20+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-20T17:20:58+08:00">
                 2019-05-20
               </time>
             
@@ -356,7 +354,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  228 字
+                  823 字
                 </span>
               
 
@@ -372,7 +370,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -393,21 +391,33 @@
       
 
       
-        <p>堆叠上下文是HTML元素的三维概念，这些HTML元素在一条假想的相对于面向（电脑屏幕的）视窗或者网页的用户的z轴上延伸，HTML元素依据其自身属性按照优先级顺序占用层叠上下文的空间。<br><a id="more"></a></p>
+        <h1 id="什么是BFC"><a href="#什么是BFC" class="headerlink" title="什么是BFC"></a>什么是BFC</h1><a id="more"></a>
+<h2 id="CSS规范中对-BFC-的描述"><a href="#CSS规范中对-BFC-的描述" class="headerlink" title="CSS规范中对 BFC 的描述"></a>CSS规范中对 BFC 的描述</h2><p>块格式化上下文</p>
+<p>浮动，绝对定位元素，非块盒的块容器（例如，inline-blocks，table-cells和table-captions）和’overflow’不为’visible’的块盒会为它们的内容建立一个新的块格式化上下文</p>
+<p>在一个块格式化上下文中，盒在竖直方向一个接一个地放置，从包含块的顶部开始。两个兄弟盒之间的竖直距离由’margin’属性决定。同一个块格式化上下文中的相邻块级盒之间的竖直margin会合并</p>
+<p>在一个块格式化上下文中，每个盒的left外边（left outer edge）挨着包含块的left边（对于从右向左的格式化，right边挨着）。即使存在浮动（尽管一个盒的行盒可能会因为浮动收缩），这也成立。除非该盒建立了一个新的块格式化上下文（这种情况下，该盒自身可能会因为浮动变窄）</p>
+<h2 id="MDN-对-BFC-的描述"><a href="#MDN-对-BFC-的描述" class="headerlink" title="MDN 对 BFC 的描述"></a>MDN 对 BFC 的描述</h2><p>一个块格式化上下文（block formatting context） 是Web页面的可视化CSS渲染出的一部分。它是块级盒布局出现的区域，也是浮动层元素进行交互的区域。</p>
+<p>一个块格式化上下文由以下之一创建：</p>
 <ul>
-<li>根元素 (HTML)</li>
-<li>z-index 值不为 “auto”的 绝对/相对定位</li>
-<li>一个 z-index 值不为 “auto”的 flex 项目 (flex item)，即：父元素 display: flex|- inline-flex</li>
-<li>opacity 属性值小于 1 的元素（参考 the specification for opacity）</li>
-<li>transform 属性值不为 “none”的元素</li>
-<li>mix-blend-mode 属性值不为 “normal”的元素</li>
-<li>filter值不为“none”的元素</li>
-<li>perspective值不为“none”的元素</li>
-<li>isolation 属性被设置为 “isolate”的元素</li>
-<li>position: fixed</li>
-<li>在 will-change 中指定了任意 CSS 属性，即便你没有直接指定这些属性的值（参考 这篇文章）</li>
-<li>-webkit-overflow-scrolling 属性被设置 “touch”的元素<br><img src="/images/微信截图_20190520121856.png" alt></li>
+<li>根元素或其它包含它的元素</li>
+<li>浮动元素 (元素的 float 不是 none)</li>
+<li>绝对定位元素 (元素具有 position 为 absolute 或 fixed)</li>
+<li>内联块 (元素具有 display: inline-block)</li>
+<li>表格单元格 (元素具有 display: table-cell，HTML表格单元格默认属性)</li>
+<li>表格标题 (元素具有 display: table-caption, HTML表格标题默认属性)</li>
+<li>具有overflow 且值不是 visible 的块元素，</li>
+<li>display: flow-root</li>
+<li>column-span: all 应当总是会创建一个新的格式化上下文，即便具有 column-span: all 的元素并不被包裹在一个多列容器中。</li>
+<li>一个块格式化上下文包括创建它的元素内部所有内容，除了被包含于创建新的块级格式化上下文的后代元素内的元素。</li>
 </ul>
+<p>块格式化上下文对于定位 (参见 float) 与清除浮动 (参见 clear) 很重要。定位和清除浮动的样式规则只适用于处于同一块格式化上下文内的元素。浮动不会影响其它块格式化上下文中元素的布局，并且清除浮动只能清除同一块格式化上下文中在它前面的元素的浮动。</p>
+<h2 id="张鑫旭对-BFC-的描述"><a href="#张鑫旭对-BFC-的描述" class="headerlink" title="张鑫旭对 BFC 的描述"></a>张鑫旭对 BFC 的描述</h2><p>BFC全称”Block Formatting Context”, 中文为”块级格式化上下文”。啪啦啪啦特性什么的，一言难尽，大家可以自行去查找，我这里不详述，免得乱了主次，总之，记住这么一句话：BFC元素特性表现原则就是，内部子元素再怎么翻江倒海，翻云覆雨都不会影响外部的元素。所以，避免margin穿透啊，清除浮动什么的也好理解了。</p>
+<h1 id="BFC功能1"><a href="#BFC功能1" class="headerlink" title="BFC功能1"></a>BFC功能1</h1><p>爸爸管儿子<br><a href="http://js.jirengu.com/rozaxufetu/1/edit?html,css,output" target="_blank" rel="noopener">用 BFC 包住浮动元素</a><br>(这不是清除浮动，.clearfix 才是清除浮动）</p>
+<h1 id="BFC功能2"><a href="#BFC功能2" class="headerlink" title="BFC功能2"></a>BFC功能2</h1><p>兄弟之间划清界限<br><a href="http://js.jirengu.com/felikenuve/1/edit?html,css,output" target="_blank" rel="noopener">用 float + div 做左右自适应布局</a></p>
+<h1 id="回答面试"><a href="#回答面试" class="headerlink" title="回答面试"></a>回答面试</h1><ol>
+<li>不要解释</li>
+<li>用代码</li>
+</ol>
 
       
     </div>
@@ -449,8 +459,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/19/CSS深入浅出-文档流与盒模型/" rel="next" title="CSS文档流与盒模型">
-                <i class="fa fa-chevron-left"></i> CSS文档流与盒模型
+              <a href="/2019/05/20/CSS深入浅出-Flex布局/" rel="next" title="CSS深入浅出-Flex布局">
+                <i class="fa fa-chevron-left"></i> CSS深入浅出-Flex布局
               </a>
             
           </div>
@@ -458,10 +468,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/20/CSS深入浅出-Icon/" rel="prev" title="CSS深入浅出-Icon">
-                CSS深入浅出-Icon <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -513,8 +519,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -584,6 +599,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是BFC"><span class="nav-number">1.</span> <span class="nav-text">什么是BFC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS规范中对-BFC-的描述"><span class="nav-number">1.1.</span> <span class="nav-text">CSS规范中对 BFC 的描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MDN-对-BFC-的描述"><span class="nav-number">1.2.</span> <span class="nav-text">MDN 对 BFC 的描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#张鑫旭对-BFC-的描述"><span class="nav-number">1.3.</span> <span class="nav-text">张鑫旭对 BFC 的描述</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BFC功能1"><span class="nav-number">2.</span> <span class="nav-text">BFC功能1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BFC功能2"><span class="nav-number">3.</span> <span class="nav-text">BFC功能2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#回答面试"><span class="nav-number">4.</span> <span class="nav-text">回答面试</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
