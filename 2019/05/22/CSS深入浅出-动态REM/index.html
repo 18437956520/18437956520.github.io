@@ -86,15 +86,18 @@
 
 
 
+<meta name="description" content="什么是REMREM跟EM的区别又是什么">
 <meta name="keywords" content="前端,CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS深入浅出-动态REM">
 <meta property="og:url" content="http://yoursite.com/2019/05/22/CSS深入浅出-动态REM/index.html">
 <meta property="og:site_name" content="YH">
+<meta property="og:description" content="什么是REMREM跟EM的区别又是什么">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-22T01:17:29.651Z">
+<meta property="og:updated_time" content="2019-05-22T04:41:33.301Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS深入浅出-动态REM">
+<meta name="twitter:description" content="什么是REMREM跟EM的区别又是什么">
 
 
 
@@ -351,7 +354,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  327 字
                 </span>
               
 
@@ -388,7 +391,31 @@
       
 
       
-        
+        <h1 id="什么是REM"><a href="#什么是REM" class="headerlink" title="什么是REM"></a>什么是REM</h1><h1 id="REM跟EM的区别又是什么"><a href="#REM跟EM的区别又是什么" class="headerlink" title="REM跟EM的区别又是什么"></a>REM跟EM的区别又是什么</h1><a id="more"></a>
+<p><code>rem</code>是基于<code>html</code>元素的字体大小来决定，而<code>em</code>则根据使用它的元素的大小决定</p>
+<h1 id="手机端方案的特点"><a href="#手机端方案的特点" class="headerlink" title="手机端方案的特点"></a>手机端方案的特点</h1><p>所有手机显示的界面都是一样的，只是大小不同<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> rem == html font-size == viewport width</span><br></pre></td></tr></table></figure></p>
+<h1 id="使用-JS-动态调整-REM"><a href="#使用-JS-动态调整-REM" class="headerlink" title="使用 JS 动态调整 REM"></a>使用 JS 动态调整 REM</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> pageWidth = <span class="built_in">window</span>.innerWidth</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.write(<span class="string">'&lt;style&gt;html&#123;font-size:'</span>+pageWidth+<span class="string">'px;&#125;&lt;/style&gt;'</span>)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><a href="http://js.jirengu.com/xoqadocuqu/2/edit?html,css,output" target="_blank" rel="noopener">示例</a></p>
+<h1 id="REM-可以与其他单位同时存在"><a href="#REM-可以与其他单位同时存在" class="headerlink" title="REM 可以与其他单位同时存在"></a>REM 可以与其他单位同时存在</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">0.5rem</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="在-SCSS-里使用-PX2REM"><a href="#在-SCSS-里使用-PX2REM" class="headerlink" title="在 SCSS 里使用 PX2REM"></a>在 SCSS 里使用 PX2REM</h1><ul>
+<li>npm config set registry <a href="https://registry.npm.taobao.org/" target="_blank" rel="noopener">https://registry.npm.taobao.org/</a></li>
+<li>touch ~/.bashrc</li>
+<li>echo ‘export SASS_BINARY_SITE=”<a href="https://npm.taobao.org/mirrors/node-sass&quot;&#39;" target="_blank" rel="noopener">https://npm.taobao.org/mirrors/node-sass&quot;&#39;</a> &gt;&gt; ~/.bashrc</li>
+<li>source ~/.bashrc</li>
+<li>npm i -g node-sass</li>
+<li>mkdir ~/Desktop/scss-demo</li>
+<li>cd ~/Desktop/scss-demo</li>
+<li>mkdir scss css</li>
+<li>touch scss/style.scss</li>
+<li>start scss/style.scss</li>
+<li><p>node-sass -wr scss -o css</p>
+</li>
+<li><p>编辑 scss 文件就会自动得到 css 文件</p>
+</li>
+<li><p>在 scss 文件里添加</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@function px( <span class="variable">$px</span> )&#123;</span><br><span class="line">  @return <span class="variable">$px</span>/<span class="variable">$designWidth</span>*<span class="number">10</span> + rem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$designWidth</span> : <span class="number">640</span>; <span class="comment">// 640 是设计稿的宽度，你要根据设计稿的宽度填写。如果设计师的设计稿宽度不统一，就杀死设计师，换个新的。</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.child</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: px(<span class="number">320</span>);</span><br><span class="line">  <span class="attribute">height</span>: px(<span class="number">160</span>);</span><br><span class="line">  <span class="attribute">margin</span>: px(<span class="number">40</span>) px(<span class="number">40</span>);</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">1.2em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
       
     </div>
     
@@ -489,8 +516,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -561,6 +597,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是REM"><span class="nav-number">1.</span> <span class="nav-text">什么是REM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#REM跟EM的区别又是什么"><span class="nav-number">2.</span> <span class="nav-text">REM跟EM的区别又是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#手机端方案的特点"><span class="nav-number">3.</span> <span class="nav-text">手机端方案的特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用-JS-动态调整-REM"><span class="nav-number">4.</span> <span class="nav-text">使用 JS 动态调整 REM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#REM-可以与其他单位同时存在"><span class="nav-number">5.</span> <span class="nav-text">REM 可以与其他单位同时存在</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在-SCSS-里使用-PX2REM"><span class="nav-number">6.</span> <span class="nav-text">在 SCSS 里使用 PX2REM</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -588,7 +640,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">15.5k</span>
+    <span title="Site words total count">15.9k</span>
   
 </div>
 
