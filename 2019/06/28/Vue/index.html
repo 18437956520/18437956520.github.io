@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="YH">
 <meta property="og:description" content="VueJS是什么？简单小巧，渐进式，功能强大的技术栈">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-28T09:20:25.301Z">
+<meta property="og:updated_time" content="2019-07-01T03:30:13.381Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue">
 <meta name="twitter:description" content="VueJS是什么？简单小巧，渐进式，功能强大的技术栈">
@@ -354,7 +354,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  650 字
+                  1k 字
                 </span>
               
 
@@ -370,7 +370,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -411,8 +411,13 @@
 <li>beforeDestroy 实例销毁之前调用。主要解绑一些使用 addEventListener 监听的事件等</li>
 </ul>
 <hr>
-<h2 id="文本插值和表达式"><a href="#文本插值和表达式" class="headerlink" title="文本插值和表达式"></a>文本插值和表达式</h2><p>语法：使用双大括号（ Mustache 语法）“｛｛｝｝”是最基本的文本插值方法，它会自动将我们双向绑定的数据实时显示出来<br>在｛｛｝｝中，除了简单的绑定属性值外，还可 以使用 JavaScript 表达式进行简单的运算 、 三元运算等<br>—实例<br>Vue .js 只支持单个表达式，不支持语句和流控制。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; <span class="number">6</span>+<span class="number">6</span> *<span class="number">3</span>&#125;&#125;---可以进行简单的运算 &lt;br&gt;</span><br><span class="line">&#123;&#123; <span class="number">6</span>&lt;<span class="number">3</span> ? msg :a&#125;&#125;---可以用三元运算符 &lt;br&gt;</span><br><span class="line">&#123;&#123;<span class="keyword">if</span>(<span class="number">6</span>&gt;<span class="number">3</span>)&#125;&#125;-----注意：文本插值的形式，其中不能书写表达式,支持单个表达式</span><br><span class="line">&#123;&#123;<span class="keyword">var</span> a = <span class="number">6</span>&#125;&#125;--也是多行表达式----<span class="keyword">var</span> a ;a = <span class="number">6</span>;</span><br><span class="line">〈！一这是语旬，不是表达式 一〉</span><br><span class="line">&#123; &#123; <span class="keyword">var</span> book = ’ Vue . js 实战 ’ ｝｝</span><br><span class="line">〈！一不能使用流控制，要使用三元运算 一〉</span><br><span class="line">&#123;&#123; <span class="keyword">if</span> (ok) <span class="keyword">return</span> msg ))</span><br></pre></td></tr></table></figure></p>
+<h2 id="文本插值和表达式"><a href="#文本插值和表达式" class="headerlink" title="文本插值和表达式"></a>文本插值和表达式</h2><p>语法：使用双大括号（ Mustache 语法）”{ {} }”是最基本的文本插值方法，它会自动将我们双向绑定的数据实时显示出来<br>在”{ {} }”中，除了简单的绑定属性值外，还可 以使用 JavaScript 表达式进行简单的运算 、 三元运算等<br>—实例<br>Vue .js 只支持单个表达式，不支持语句和流控制。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; <span class="number">6</span>+<span class="number">6</span> *<span class="number">3</span>&#125;&#125;---可以进行简单的运算 &lt;br&gt;</span><br><span class="line">&#123;&#123; <span class="number">6</span>&lt;<span class="number">3</span> ? msg :a&#125;&#125;---可以用三元运算符 &lt;br&gt;</span><br><span class="line">&#123;&#123;<span class="keyword">if</span>(<span class="number">6</span>&gt;<span class="number">3</span>)&#125;&#125;-----注意：文本插值的形式，其中不能书写表达式,支持单个表达式</span><br><span class="line">&#123;&#123;<span class="keyword">var</span> a = <span class="number">6</span>&#125;&#125;--也是多行表达式----<span class="keyword">var</span> a ;a = <span class="number">6</span>;</span><br><span class="line">〈！一这是语旬，不是表达式 一〉</span><br><span class="line">&#123; &#123; <span class="keyword">var</span> book = ’ Vue . js 实战 ’ ｝｝</span><br><span class="line">〈！一不能使用流控制，要使用三元运算 一〉</span><br><span class="line">&#123;&#123; <span class="keyword">if</span> (ok) <span class="keyword">return</span> msg ))</span><br></pre></td></tr></table></figure></p>
 <hr>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p>Vue. 支持在”{ {} }”插值的尾部添加一小管道符 “ | ” 对数据进行过滤，经常用于格式化文本，比如字母全部大写、货币千位使用逗号分隔等。过滤的规则是自定义的， 通过给 Vue 实例添加选项 filters 来设置过滤器：<br><code>{ { data | filter1 |filter2} }</code></p>
+<h2 id="date-formatDate-66-99-中的第一个和第二个参数，分别对应过滤器的第二个和第三个参数"><a href="#date-formatDate-66-99-中的第一个和第二个参数，分别对应过滤器的第二个和第三个参数" class="headerlink" title="{ {date | formatDate(66,99)} } 中的第一个和第二个参数，分别对应过滤器的第二个和第三个参数"></a><code>{ {date | formatDate(66,99)} }</code> 中的第一个和第二个参数，分别对应过滤器的第二个和第三个参数</h2><h2 id="指令和事件"><a href="#指令和事件" class="headerlink" title="指令和事件"></a>指令和事件</h2><p>指令（ Directives ）是 Vue 模板中最常用的一项功能，它带有前缀 v－，能帮我们快速完成DOM操作。循环渲染。显示和隐藏<br>v­text:—————­解析文本 和`{ {} }”作用一样<br>v­html:————— 解析html<br>v­bind—————–v­bind 的基本用途是动态更新 HTML 元素上的属性，比如 id 、class 等<br>v­on——————它用来绑定事件监听器</p>
+<p>在普通元素上， v­on 可以监听原生的 DOM 事件，除了 click 外，还有dblclick、 keyup, mousemove 等。表达式可以是一个方法名，这些方法都写在 Vue 实例的 methods 属性内，并且是函数的形式，函数内的 this 指向的是当前 Vue 实例本身，因此可以直接使用 this.xxx 的形式来访问或修改数据</p>
+<p>vue中用 到的所有方法都定义在methods中</p>
+<h2 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h2><p>语法糖是指在不影响功能的情况下 ， 添加某种简洁方法实现同样的效果 ， 从而更加方便程序开发。<br>v-bind ——&gt; : (冒号)<br>v-on ——&gt; @</p>
 
       
     </div>
@@ -604,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#VueJS是什么？"><span class="nav-number">1.</span> <span class="nav-text">VueJS是什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VueJS的模式"><span class="nav-number">2.</span> <span class="nav-text">VueJS的模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#VM：ViewModel"><span class="nav-number">2.1.</span> <span class="nav-text">VM：ViewModel</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据绑定，指令，事件"><span class="nav-number">3.</span> <span class="nav-text">数据绑定，指令，事件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue实例和数据绑定"><span class="nav-number">3.1.</span> <span class="nav-text">Vue实例和数据绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期钩子"><span class="nav-number">3.2.</span> <span class="nav-text">生命周期钩子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本插值和表达式"><span class="nav-number">3.3.</span> <span class="nav-text">文本插值和表达式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#VueJS是什么？"><span class="nav-number">1.</span> <span class="nav-text">VueJS是什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VueJS的模式"><span class="nav-number">2.</span> <span class="nav-text">VueJS的模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#VM：ViewModel"><span class="nav-number">2.1.</span> <span class="nav-text">VM：ViewModel</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据绑定，指令，事件"><span class="nav-number">3.</span> <span class="nav-text">数据绑定，指令，事件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue实例和数据绑定"><span class="nav-number">3.1.</span> <span class="nav-text">Vue实例和数据绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期钩子"><span class="nav-number">3.2.</span> <span class="nav-text">生命周期钩子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本插值和表达式"><span class="nav-number">3.3.</span> <span class="nav-text">文本插值和表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤器"><span class="nav-number">3.4.</span> <span class="nav-text">过滤器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#date-formatDate-66-99-中的第一个和第二个参数，分别对应过滤器的第二个和第三个参数"><span class="nav-number">3.5.</span> <span class="nav-text">{ {date | formatDate(66,99)} } 中的第一个和第二个参数，分别对应过滤器的第二个和第三个参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令和事件"><span class="nav-number">3.6.</span> <span class="nav-text">指令和事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法糖"><span class="nav-number">3.7.</span> <span class="nav-text">语法糖</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -638,7 +643,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">16.6k</span>
+    <span title="Site words total count">16.9k</span>
   
 </div>
 
