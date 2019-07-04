@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="YH">
 <meta property="og:description" content="VueJS是什么？简单小巧，渐进式，功能强大的技术栈">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-03T03:53:58.668Z">
+<meta property="og:updated_time" content="2019-07-04T09:00:56.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue">
 <meta name="twitter:description" content="VueJS是什么？简单小巧，渐进式，功能强大的技术栈">
@@ -354,7 +354,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.6k 字
+                  3.2k 字
                 </span>
               
 
@@ -370,7 +370,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5 分钟
+                  11 分钟
                 </span>
               
             </div>
@@ -429,7 +429,73 @@
 <p>调用 methods 里的方法也可以与计算属性起到同样的作用<br>页面中的方法： 如果是调用方法，只要页面重新渲染。方法就会重新执行，不需要渲染，则不需要重新执行计算属性：不管渲染不渲染，只要计算属性依赖的数据未发生变化，就永远不变</p>
 <p>结论: 没有使用计算属性，在 methods 里定义了一个方法实现了相同的效果，甚至该方法还可以接受参数，使用起来更灵活。既然使用 methods 就可以实现，那么为什么还需要计算属性呢？原因就是计算属性是基于它的依赖缓存的。一个计算属性所依赖的数据发生变化时，它才会重新取值，所以text 只要不改变，计算属性也就不更新</p>
 <p>何时使用: ———–使用计算属性还是 methods 取决于你是否需要缓存，当遍历大数组和做大量计算时，应当使用计算属性，除非你不希望得到缓存。</p>
-<h1 id="v-bind以及class与style的绑定"><a href="#v-bind以及class与style的绑定" class="headerlink" title="v-bind以及class与style的绑定"></a>v-bind以及class与style的绑定</h1>
+<h1 id="v-bind以及class与style的绑定"><a href="#v-bind以及class与style的绑定" class="headerlink" title="v-bind以及class与style的绑定"></a>v-bind以及class与style的绑定</h1><p>应用场景: DOM 元素经常会动态地绑定一些 class 类名或 style 样式</p>
+<h2 id="了解bind指令"><a href="#了解bind指令" class="headerlink" title="了解bind指令"></a>了解bind指令</h2><p>链接的 href 属性和图片的 src 属性都被动态设置了，当数据变化时，就会重新渲染。<br>在数据绑定中，最常见的两个需求就是元素的样式名称 class 和内联样式 style 的动态绑定，它们也是HTML的属性，因此可以使用 v­-bind 指令。我们只需要用 v­-bind 计算出表达式最终的字符串就可以，不过有时候表达式的逻辑较复杂，使用字符串拼接方法较难阅读和维护，所以 Vue.js 增强了对 class 和 style 的绑定。</p>
+<h2 id="绑定-class-的几种方式"><a href="#绑定-class-的几种方式" class="headerlink" title="绑定 class 的几种方式"></a>绑定 class 的几种方式</h2><h3 id="对象语法"><a href="#对象语法" class="headerlink" title="对象语法"></a>对象语法</h3><p>给 v­-bind:class 设置一个对象，可以动态地切换 class， 值对应true ,false<br>当 class 的表达式过长或逻辑复杂时，还可以绑定一个计算属性，这是一种很友好和常见的用法，一般当条件多于两个时， 都可以使用 data 或 computed</p>
+<h3 id="数组语法"><a href="#数组语法" class="headerlink" title="数组语法"></a>数组语法</h3><p>当需要应用多个 class 时， 可以使用数组语法 ，给 :class 绑定一个数组，应用一个 class 列表:数组成员直接对应className–类名 可以用三目运算实现,对象和数组混用</p>
+<h2 id="绑定内联样式"><a href="#绑定内联样式" class="headerlink" title="绑定内联样式"></a>绑定内联样式</h2><p>使用 v­-bind:style (即:style ) 可以给元素绑定内联样式，方法与 :class 类似，也有对象语法和数组语法，看起来很像直接在元素上写 CSS:<br>注意 : css 属性名称使用驼峰命名( fontSize )或短横分隔命名( font-size )，</p>
+<ul>
+<li>应用多个样式对象时 ，可以使用数组语法 :在实际业务 中,style 的数组语法并不常用 ，因为往往可以写在一个对象里面 : 而较为常用 的应当是计算属性</li>
+<li>使用 :style 时， Vue.js 会自动给特殊的 css 属性名称增加前缀， 比如 transform 。 </li>
+<li>无需再加前缀属性!!!!<h1 id="VueJs-中的内置指令"><a href="#VueJs-中的内置指令" class="headerlink" title="VueJs 中的内置指令"></a>VueJs 中的内置指令</h1><h2 id="基本指令"><a href="#基本指令" class="headerlink" title="基本指令"></a>基本指令</h2>v­-cloak一般与display:none进行结合使用<br>作用:解决初始化慢导致页面闪动的最佳实践<br>v-once 定义它的元素和组件只渲染一次<h2 id="条件渲染指令"><a href="#条件渲染指令" class="headerlink" title="条件渲染指令"></a>条件渲染指令</h2>v-if v-else v-else-if<br>Vue 在渲染元素时 ，出于效率考虑，会尽可能地复用已有的元素而非重新渲染，只会渲染变化的元素，也就是说，input元素被复用了<br>解决方法:加key，唯一，提供key值可以来决定是否复用该元素<br>v-show<br>只改变了css属性display<br><strong>v-if 和 v-show 的区别</strong><br>v­-if:<br>实时渲染:页面显示就渲染，不显示。我就给你移除<br>v­-show:<br>v­-show的元素永远存在也页面中，只是改变了css的display的属性<h2 id="列表渲染指令v­-for"><a href="#列表渲染指令v­-for" class="headerlink" title="列表渲染指令v­-for"></a>列表渲染指令v­-for</h2>用法: 当需要将一个数组遍历或枚举一个对象属性的时候循环显示时，就会用到列表 渲染指令 v­-for<br>两种使用场景:</li>
+<li>遍历多个对象</li>
+<li>遍历一个对象的多个属性<h2 id="数组更新，过滤与排序"><a href="#数组更新，过滤与排序" class="headerlink" title="数组更新，过滤与排序"></a>数组更新，过滤与排序</h2>改变数组的一系列方法:</li>
+<li>push() 在末尾添加元素</li>
+<li>pop() 将数组的最后一个元素移除</li>
+<li>shift() 删除数组的第一个元素</li>
+<li>unshift():在数组的第一个元素位置添加一个元素 </li>
+<li>splice() :可以添加或者删除函数—返回删除的元素<br><strong>三个参数:</strong></li>
+</ul>
+<ol>
+<li>第一个参数 表示开始操作的位置</li>
+<li>第二个参数表示:要操作的长度</li>
+<li>第三个为可选参数:</li>
+</ol>
+<ul>
+<li>sort():排序</li>
+<li>reverse()<br><strong>两个数组变动vue检测不到:</strong></li>
+</ul>
+<ol>
+<li>改变数组的指定项 </li>
+<li>改变数组长度<br><strong>过滤:filter</strong></li>
+<li>改变指定项: Vue.set(app.arr,1,”car”);</li>
+<li>app.arr.splice(1): 改变数组长度<br><strong>解决方法:</strong></li>
+<li>set</li>
+<li>splice<h2 id="方法和事件"><a href="#方法和事件" class="headerlink" title="方法和事件"></a>方法和事件</h2>[object MouseEvent]<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2>v­-on绑定的事件类似于原生 的onclick等写法<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">    handle: <span class="function"><span class="keyword">function</span> (<span class="params">count</span>) </span>&#123;</span><br><span class="line">        count = count || <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">this</span>.count += count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>如果方法中带有参数，但是尼没有加括号，默认传原生事件对象event</p>
+<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><p>在vue中传入event对象用 $event<br>向上冒泡<br>stop:阻止单击事件向上冒泡<br>prevent::提交事件并且不重载页面<br>self:只是作用在元素本身而非子元素的时候调用<br>once: 只执行一次的方法</p>
+<p>可以监听键盘事件:</p>
+<p><input @keyup.13="submitMe"> ——­指定的keyCode<br>vueJS为我们提供了:<br>.enter<br>.tab<br>.delete</p>
+<h1 id="表单-v-model"><a href="#表单-v-model" class="headerlink" title="表单 v-model"></a>表单 v-model</h1><h2 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h2><p>用于在表单类元素上双向绑定事件<br><strong>input和textarea</strong><br>可以用于input框，以及textarea等<br>注意: 所显示的值只依赖于所绑定的数据，不再关心初始化时的插入的value<br><strong>单选按钮:</strong></p>
+<ol>
+<li>单个单选按钮，直接用v­-bind绑定一个布尔值，用v­-model是不可以的</li>
+<li>如果是组合使用，就需要v­-model来配合value使用，绑定选中的单选框的value值，此处所绑定的初始值可以随意给</li>
+</ol>
+<p><strong>复选框:</strong></p>
+<ol>
+<li>单个复选框，直接用定一个布尔值，可以用v­-model可以用v­-bind</li>
+<li>多个复选框, 如果是组合使用，就需要v­-model来配合value使用v­-model绑定一个数组—如果绑定的是字符串，则会转化为true。false，与所有绑定的复选框的 checked属性相对应</li>
+</ol>
+<p><strong>下拉框:</strong></p>
+<ol>
+<li>如果是单选，所绑定的value值初始化可以为数组，也可以为字符串，有value直接优 先匹配一个value值，没有value就匹配一个text值</li>
+<li>如果是多选，就需要v­-model来配合value使用，v­-model绑定一个数组，与复选框类 似</li>
+<li>v­-model一定是绑定在select标签上</li>
+</ol>
+<p><strong>总结一下:</strong><br>如果是单选，初始化最好给定字符串，因为v­model此时绑定的是静态字符串或者布尔值<br>如果是多选，初始化最好给定一个数组</p>
+<h2 id="绑定值"><a href="#绑定值" class="headerlink" title="绑定值"></a>绑定值</h2><ul>
+<li>单选按钮 </li>
+<li>只需要用v­-bind给单个单选框绑定一个value值，此时，v­-model绑定的就是他的value值</li>
+<li>复选框</li>
+<li>下拉框</li>
+<li>在select标签上绑定value值对option并没有影响<h2 id="修饰符-1"><a href="#修饰符-1" class="headerlink" title="修饰符"></a>修饰符</h2></li>
+<li>lazy —— v­-model默认是在input输入时实时同步输入框的数据，而lazy修饰符，可以使其在失去焦点或者敲回车键之后在更新</li>
+<li>number —— 将输入的字符串转化为number类型</li>
+<li>trim —— trim自动过滤输入过程中收尾输入的空格</li>
+</ul>
+
       
     </div>
     
@@ -620,7 +686,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#VueJS是什么？"><span class="nav-number">1.</span> <span class="nav-text">VueJS是什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VueJS的模式"><span class="nav-number">2.</span> <span class="nav-text">VueJS的模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#VM：ViewModel"><span class="nav-number">2.1.</span> <span class="nav-text">VM：ViewModel</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据绑定，指令，事件"><span class="nav-number">3.</span> <span class="nav-text">数据绑定，指令，事件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue实例和数据绑定"><span class="nav-number">3.1.</span> <span class="nav-text">Vue实例和数据绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期钩子"><span class="nav-number">3.2.</span> <span class="nav-text">生命周期钩子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本插值和表达式"><span class="nav-number">3.3.</span> <span class="nav-text">文本插值和表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤器"><span class="nav-number">3.4.</span> <span class="nav-text">过滤器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#date-formatDate-66-99-中的第一个和第二个参数，分别对应过滤器的第二个和第三个参数"><span class="nav-number">3.5.</span> <span class="nav-text">{ {date | formatDate(66,99)} } 中的第一个和第二个参数，分别对应过滤器的第二个和第三个参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令和事件"><span class="nav-number">3.6.</span> <span class="nav-text">指令和事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法糖"><span class="nav-number">3.7.</span> <span class="nav-text">语法糖</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算属性"><span class="nav-number">4.</span> <span class="nav-text">计算属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#v-bind以及class与style的绑定"><span class="nav-number">5.</span> <span class="nav-text">v-bind以及class与style的绑定</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#VueJS是什么？"><span class="nav-number">1.</span> <span class="nav-text">VueJS是什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VueJS的模式"><span class="nav-number">2.</span> <span class="nav-text">VueJS的模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#VM：ViewModel"><span class="nav-number">2.1.</span> <span class="nav-text">VM：ViewModel</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据绑定，指令，事件"><span class="nav-number">3.</span> <span class="nav-text">数据绑定，指令，事件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue实例和数据绑定"><span class="nav-number">3.1.</span> <span class="nav-text">Vue实例和数据绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期钩子"><span class="nav-number">3.2.</span> <span class="nav-text">生命周期钩子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本插值和表达式"><span class="nav-number">3.3.</span> <span class="nav-text">文本插值和表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤器"><span class="nav-number">3.4.</span> <span class="nav-text">过滤器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#date-formatDate-66-99-中的第一个和第二个参数，分别对应过滤器的第二个和第三个参数"><span class="nav-number">3.5.</span> <span class="nav-text">{ {date | formatDate(66,99)} } 中的第一个和第二个参数，分别对应过滤器的第二个和第三个参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令和事件"><span class="nav-number">3.6.</span> <span class="nav-text">指令和事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法糖"><span class="nav-number">3.7.</span> <span class="nav-text">语法糖</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算属性"><span class="nav-number">4.</span> <span class="nav-text">计算属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#v-bind以及class与style的绑定"><span class="nav-number">5.</span> <span class="nav-text">v-bind以及class与style的绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#了解bind指令"><span class="nav-number">5.1.</span> <span class="nav-text">了解bind指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定-class-的几种方式"><span class="nav-number">5.2.</span> <span class="nav-text">绑定 class 的几种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象语法"><span class="nav-number">5.2.1.</span> <span class="nav-text">对象语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组语法"><span class="nav-number">5.2.2.</span> <span class="nav-text">数组语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定内联样式"><span class="nav-number">5.3.</span> <span class="nav-text">绑定内联样式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VueJs-中的内置指令"><span class="nav-number">6.</span> <span class="nav-text">VueJs 中的内置指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本指令"><span class="nav-number">6.1.</span> <span class="nav-text">基本指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件渲染指令"><span class="nav-number">6.2.</span> <span class="nav-text">条件渲染指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表渲染指令v­-for"><span class="nav-number">6.3.</span> <span class="nav-text">列表渲染指令v­-for</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组更新，过滤与排序"><span class="nav-number">6.4.</span> <span class="nav-text">数组更新，过滤与排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法和事件"><span class="nav-number">6.5.</span> <span class="nav-text">方法和事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本用法"><span class="nav-number">6.6.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修饰符"><span class="nav-number">6.7.</span> <span class="nav-text">修饰符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表单-v-model"><span class="nav-number">7.</span> <span class="nav-text">表单 v-model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#v-model"><span class="nav-number">7.1.</span> <span class="nav-text">v-model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定值"><span class="nav-number">7.2.</span> <span class="nav-text">绑定值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修饰符-1"><span class="nav-number">7.3.</span> <span class="nav-text">修饰符</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -654,7 +720,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">17.5k</span>
+    <span title="Site words total count">19.1k</span>
   
 </div>
 
