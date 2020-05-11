@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="YH">
 <meta property="og:description" content="面试题全汇总（不做分类）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-11T11:25:32.923Z">
+<meta property="og:updated_time" content="2020-05-11T11:32:49.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试题汇总">
 <meta name="twitter:description" content="面试题全汇总（不做分类）">
@@ -413,9 +413,9 @@
 <h1 id="vue-与-react-优缺点对比"><a href="#vue-与-react-优缺点对比" class="headerlink" title="vue 与 react 优缺点对比"></a>vue 与 react 优缺点对比</h1><p><em>vue</em><br>API 设计上简单，语法简单，学习成本低<br>构建方面不包含路由和 ajax 功能，使用 vuex, vue-router<br>指令（dom）和组件（视图，数据，逻辑）处理清晰<br>性能好，容易优化<br>基于依赖追踪的观察系统，并且异步队列更新<br>独立触发<br>v-model 实时渲染<br>适用于：模板和渲染函数的弹性选择<br>简单的语法及项目搭建<br>更快的渲染速度和更小的体积</p>
 <p><em>react</em><br>利用 jsx 创建虚拟 dom<br>是一种在内存中描述 dom 树状态的数据结构<br>函数式的方法描述视图<br>使用虚拟 dom 作为模板<br>程序片段<br>不好控制 dom<br>生命周期<br>服务端渲染：react 的虚拟 dom 的生成可以在任何支持 JavaScript 的环境生成的，所以可以在 node 环境生成，直接转为 string, 然后插入到 html 文件中输出浏览器便可<br>适用于：大型应用和更好的可测试性；同时适用于 web 端和原生 app; 更大的生态圈</p>
 <ul>
-<li><p>优点 *<br>React 伟大之处就在于，提出了 Virtual Dom 这种新颖的思路，并且这种思路衍生出了 React Native，有可能会统一 Web/Native 开发。在性能方面，由于运用了 Virtual Dom 技术，Reactjs 只在调用 setState 的时候会更新 dom，而且还是先更新 Virtual Dom，然后和实际 Dom 比较，最后再更新实际 Dom。这个过程比起 Angularjs 的 bind 方式来说，一是更新 dom 的次数少，二是更新 dom 的内容少，速度肯定快<br>ReactJS 更关注 UI 的组件化，和数据的单向更新，提出了 FLUX 架构的新概念，现在 React 可以直接用 JavaScript ES6 语法了，然后通过 webpack 编译成浏览器兼容的 ES5，开发效率上有些优势.<br>React Native 生成的 App 不是运行在 WebView 上，而是系统原生的 UI，React 通过 jsx 生成系统原生的 UI，iOS 和 Android 的 React UI 组件还是比较相似的，大量代码可以复用<br>维护 UI 的状态,Angular 里面使用的是 $scope，在 React 里面使用的是 this.setState。 而 React 的好处在于，它更简单直观。所有的状态改变都只有唯一一个入口 this.setState()，<br>同构的 JavaScript<br>单页面 JavaScript 应用程序的最大缺陷在于对搜索引擎的索引有很大限制。React 对此有了解决方案。<br>React 可以在服务器上预渲染应用再发送到客户端。它可以从预渲染的静态内容中恢复一样的记录到动态应用程序中。<br>因为搜索引擎的爬虫程序依赖的是服务端响应而不是 JavaScript 的执行，预渲染你的应用有助于搜索引擎优化。</p>
+<li><p>优点<br>React 伟大之处就在于，提出了 Virtual Dom 这种新颖的思路，并且这种思路衍生出了 React Native，有可能会统一 Web/Native 开发。在性能方面，由于运用了 Virtual Dom 技术，Reactjs 只在调用 setState 的时候会更新 dom，而且还是先更新 Virtual Dom，然后和实际 Dom 比较，最后再更新实际 Dom。这个过程比起 Angularjs 的 bind 方式来说，一是更新 dom 的次数少，二是更新 dom 的内容少，速度肯定快<br>ReactJS 更关注 UI 的组件化，和数据的单向更新，提出了 FLUX 架构的新概念，现在 React 可以直接用 JavaScript ES6 语法了，然后通过 webpack 编译成浏览器兼容的 ES5，开发效率上有些优势.<br>React Native 生成的 App 不是运行在 WebView 上，而是系统原生的 UI，React 通过 jsx 生成系统原生的 UI，iOS 和 Android 的 React UI 组件还是比较相似的，大量代码可以复用<br>维护 UI 的状态,Angular 里面使用的是 $scope，在 React 里面使用的是 this.setState。 而 React 的好处在于，它更简单直观。所有的状态改变都只有唯一一个入口 this.setState()，<br>同构的 JavaScript<br>单页面 JavaScript 应用程序的最大缺陷在于对搜索引擎的索引有很大限制。React 对此有了解决方案。<br>React 可以在服务器上预渲染应用再发送到客户端。它可以从预渲染的静态内容中恢复一样的记录到动态应用程序中。<br>因为搜索引擎的爬虫程序依赖的是服务端响应而不是 JavaScript 的执行，预渲染你的应用有助于搜索引擎优化。</p>
 </li>
-<li><p>缺点 *<br>React 是目标是 UI 组件，通常可以和其它框架组合使用，目前并不适合单独做一个完整的框架。React 即使配上 redux 的组合，也不能称之一个完整的框架，比如你想用 Promise 化的 AJAX？对不起没有，自己找现成的库去。而且第三方组件远远不如 Angular 多。目前在大的稳定的项目上采用 React 的，我也就只知道有 Yahoo 的 Email。React 本身只是一个 V 而已，所以如果是大型项目想要一套完整的框架的话，也许还需要引入 Redux 和 route 相关的东西。</p>
+<li><p>缺点<br>React 是目标是 UI 组件，通常可以和其它框架组合使用，目前并不适合单独做一个完整的框架。React 即使配上 redux 的组合，也不能称之一个完整的框架，比如你想用 Promise 化的 AJAX？对不起没有，自己找现成的库去。而且第三方组件远远不如 Angular 多。目前在大的稳定的项目上采用 React 的，我也就只知道有 Yahoo 的 Email。React 本身只是一个 V 而已，所以如果是大型项目想要一套完整的框架的话，也许还需要引入 Redux 和 route 相关的东西。</p>
 </li>
 </ul>
 <p><em>vue react 共性：</em><br>虚拟 dom 实现快速渲染<br>轻量级响应式组件<br>服务端渲染易于集成路由工具，打包工具及状态管理工具</p>
