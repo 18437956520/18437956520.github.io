@@ -6,7 +6,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>  前端 |    YYh.</title>
+  <title>  Search |    YYh.</title>
   <!-- 标签页图标 -->
   
 
@@ -117,60 +117,34 @@
 <div class="body-outer">
   <div class="body-inner">
     
-<div id="tag">
-  <h1>前端</h1>
-  
-    <div class="tag-item">
-      <a href="/2019/04/01/初探jQuery/">
-        初探jQuery
-      </a>
-      <time datetime="2019-04-01T06:21:14.000Z">
-        2019-04-01
-      </time>
+<article class="post-inner">
+    <div class="post-content-outer">
+      <div class="post-content-inner">
+        <div class="post-content-main animate__animated  animate__fadeInUp">
+            <div class="search">
+                <div class="search-input-outer">
+                    <form>
+                        <input type="text" placeholder="想要搜些什么呢..." id="local-search-input" name="q" results="0">
+                        <button type="submit"><i class="ri-search-line"></i></button>
+                    </form>
+                </div>
+                <div id="local-search-result">
+                    
+                </div>
+            </div>
+        </div>
+     </div>
     </div>
-  
-    <div class="tag-item">
-      <a href="/2019/03/30/jQuery/">
-        jQuery
-      </a>
-      <time datetime="2019-03-30T13:49:52.000Z">
-        2019-03-30
-      </time>
-    </div>
-  
-    <div class="tag-item">
-      <a href="/2019/03/27/函数/">
-        函数
-      </a>
-      <time datetime="2019-03-27T10:12:52.000Z">
-        2019-03-27
-      </time>
-    </div>
-  
-    <div class="tag-item">
-      <a href="/2019/03/27/Array/">
-        Array
-      </a>
-      <time datetime="2019-03-27T06:01:44.000Z">
-        2019-03-27
-      </time>
-    </div>
-  
-    <div class="tag-item">
-      <a href="/2019/03/26/DOM/">
-        DOM常用API
-      </a>
-      <time datetime="2019-03-26T10:30:46.000Z">
-        2019-03-26
-      </time>
-    </div>
-  
-</div>
+  </article>
 
-<div id="paginator">
-  <a class="extend prev" rel="prev" href="/tags/前端/page/2/">Prev</a><a class="page-number" href="/tags/前端/">1</a><a class="page-number" href="/tags/前端/page/2/">2</a><span class="page-number current">3</span>
-</div>
-
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<script src="/js/search.js"></script>
+<script type="text/javascript">      
+    var search_path = "search.xml";
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
+  
   </div>
 </div>
 

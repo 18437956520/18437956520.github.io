@@ -1,875 +1,433 @@
+
+
+
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="theme-color" content="#222">
-
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  所有猫猫知识呀 |    YYh.</title>
+  <!-- 标签页图标 -->
   
+
+  <!-- 图标库 -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- 动画库 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/css/animate.css">
+  <!-- css文件 -->
+  <link rel="stylesheet" href="/css/white.css">
+  <!-- 代码高亮 -->
   
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/github.css">
     
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/cat.ico?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/cat.ico?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/cat.ico?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/cat.ico?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
-
-
-
-
-
-
-
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="YH">
-<meta property="og:url" content="http://yoursite.com/archives/2019/04/index.html">
-<meta property="og:site_name" content="YH">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YH">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/archives/2019/04/">
-
-
-
-
-
-  <title>归档 | YH</title>
-  
-
-
-
-
-
-
-
-
 </head>
+</html>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body>
 
-  
-  
-    
-  
+<div class="menu-outer">
+    <div class="menu-inner">
+      <div class="menu-site-name  animate__animated  animate__fadeInUp">
+        <a href="/">
+          YYh.
+        </a>
+        
+      </div>
+      <div class="menu-group">
+        <ul class="menu-ul">
+        
+          <a href="/" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              主页
+            </li>
+          </a>
+        
+          <a href="/archives" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              时间轴
+            </li>
+          </a>
+        
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="sort">
+             分类
+             <div class="categories-outer " id="sort-div">
+               <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS深入浅出/">CSS深入浅出</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端学习/">前端学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/测试/">测试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试汇总/">面试汇总</a></li></ul>
+             </div>
+          </li>
+        
+        
+        <a href="/search">
+          <li class="menu-li  animate__animated  animate__fadeInUp">
+            <i class="ri-search-line"></i>
+          </li>
+        </a>
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="mobile-menu">
+            <i class="ri-menu-line"></i>
+          </li>
+        
+        </ul>
 
-  <div class="container sidebar-position-left page-archive">
-    <div class="headband"></div>
+      </div>
 
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">YH</span>
-        <span class="logo-line-after"><i></i></span>
+    </div>
+</div>
+<div id="mobile-main" class="animate__animated  animate__fadeIn">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-site-name  animate__animated  animate__fadeInUp">
+      <a href="/">
+        YYh.
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    <div class="mobile-menu-group" id="mobile-close">
+      <i class="ri-close-line"></i>
+    </div>
+
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="mobile-menu-div">
+  
+    <a href="/" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>主页</span>
+      </div>
+    </a>
+  
+    <a href="/archives" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>时间轴</span>
+      </div>
+    </a>
+  
+  
+    <a href="/search">  
+      <div class="mobile-menu-child  animate__animated  animate__fadeInUp">
+        <i class="ri-search-line"></i>
+      </div>
+    </a>
+    
+  </div>
+
+
+</div>
+
+<div class="body-outer">
+  <div class="body-inner">
+    <section class="archive-outer">
+    <section class="archive-inner">
+        
+        
+        
+        
+            
+            
+        <div class="archive-name animate__animated  animate__fadeInUp">2020</div>
+        
+          <a href="/2020/05/08/面试题汇总/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">面试题汇总</div>
+            <div class="archive-post-date">05-08</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2020/04/03/JavaScript基础汇总/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">JavaScript 基础汇总</div>
+            <div class="archive-post-date">04-03</div>
+          </div>
+          </a>
+        
+        
+        
+            
+            
+            
+        <div class="archive-name animate__animated  animate__fadeInUp">2019</div>
+        
+          <a href="/2019/06/28/Vue/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">Vue</div>
+            <div class="archive-post-date">06-28</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/05/23/CSS深入浅出-IFC/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">CSS深入浅出-IFC</div>
+            <div class="archive-post-date">05-23</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/05/22/CSS深入浅出-表单美化/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">CSS深入浅出-表单美化</div>
+            <div class="archive-post-date">05-22</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/05/22/CSS深入浅出-动态REM/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">CSS深入浅出-动态REM</div>
+            <div class="archive-post-date">05-22</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/05/21/CSS深入浅出-BFC/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">CSS深入浅出-BFC</div>
+            <div class="archive-post-date">05-21</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/05/21/CSS深入浅出-布局套路/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">CSS深入浅出-布局套路</div>
+            <div class="archive-post-date">05-21</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/05/20/CSS深入浅出-Flex布局/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">CSS深入浅出-Flex布局</div>
+            <div class="archive-post-date">05-20</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/05/20/CSS深入浅出-移动端页面-响应式/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">CSS深入浅出-移动端页面(响应式)</div>
+            <div class="archive-post-date">05-20</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/05/20/CSS深入浅出-Icon/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">CSS深入浅出-Icon</div>
+            <div class="archive-post-date">05-20</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/05/20/CSS深入浅出-堆叠上下文/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">CSS深入浅出-堆叠上下文</div>
+            <div class="archive-post-date">05-20</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/05/19/CSS深入浅出-文档流与盒模型/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">CSS文档流与盒模型</div>
+            <div class="archive-post-date">05-19</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/04/21/面向对象编程/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">面向对象编程</div>
+            <div class="archive-post-date">04-21</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/04/20/MVC/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">MVC</div>
+            <div class="archive-post-date">04-20</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/04/18/立即执行函数/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">立即执行函数</div>
+            <div class="archive-post-date">04-18</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/04/14/AJAX/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">AJAX</div>
+            <div class="archive-post-date">04-14</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/04/11/详解JSONP/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">详解JSONP</div>
+            <div class="archive-post-date">04-11</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/04/07/JSONP/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">JSONP</div>
+            <div class="archive-post-date">04-07</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/04/05/面试小结1/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">面试小结Ⅰ</div>
+            <div class="archive-post-date">04-05</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/04/01/初探jQuery/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">初探jQuery</div>
+            <div class="archive-post-date">04-01</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/03/30/jQuery/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">jQuery</div>
+            <div class="archive-post-date">03-30</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/03/27/函数/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">函数</div>
+            <div class="archive-post-date">03-27</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/03/27/Array/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">Array</div>
+            <div class="archive-post-date">03-27</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/03/26/DOM/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">DOM常用API</div>
+            <div class="archive-post-date">03-26</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/03/26/Tween-js的使用/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">Tween.js</div>
+            <div class="archive-post-date">03-26</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/03/25/第三篇博客/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">第三篇博客</div>
+            <div class="archive-post-date">03-25</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/03/25/第二篇博客/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">第二篇博客</div>
+            <div class="archive-post-date">03-25</div>
+          </div>
+          </a>
+        
+        
+        
+          <a href="/2019/03/25/开博大吉/">
+          <div class="archive-post animate__animated  animate__fadeInUp">
+            <div class="archive-post-title">开博大吉</div>
+            <div class="archive-post-date">03-25</div>
+          </div>
+          </a>
+        
+    </section>
+</section>
+  
+
+  
   </div>
 </div>
 
-<nav class="site-nav">
-  
+  <div class="footer-outer animate__animated  animate__fadeInUp">
+    <div class="footer-inner">
+    <div class="footer-text">
+    <p>加油鸭</p>
 
-  
-    <ul id="menu" class="menu">
-      
+    </div>
+    <div class="footer-contact">
+    <ul class="footer-ul">
         
-        <li class="menu-item menu-item-首页">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
+        <li class="footer-li">
+            <a href target="_blank">
+                <i class="ri-github-line"></i>
+            </a>
         </li>
-      
         
-        <li class="menu-item menu-item-关于">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-标签">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-分类">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-归档">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
-
-      
     </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 29 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/21/面向对象编程/" itemprop="url">
-              
-                <span itemprop="name">面向对象编程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-21T13:06:33+08:00" content="2019-04-21">
-          04-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/20/MVC/" itemprop="url">
-              
-                <span itemprop="name">MVC</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-20T10:20:18+08:00" content="2019-04-20">
-          04-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/18/立即执行函数/" itemprop="url">
-              
-                <span itemprop="name">立即执行函数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-18T11:14:16+08:00" content="2019-04-18">
-          04-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/14/AJAX/" itemprop="url">
-              
-                <span itemprop="name">AJAX</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-14T21:08:50+08:00" content="2019-04-14">
-          04-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/11/详解JSONP/" itemprop="url">
-              
-                <span itemprop="name">详解JSONP</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-11T17:12:22+08:00" content="2019-04-11">
-          04-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/07/JSONP/" itemprop="url">
-              
-                <span itemprop="name">JSONP</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-07T19:40:06+08:00" content="2019-04-07">
-          04-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/05/面试小结1/" itemprop="url">
-              
-                <span itemprop="name">面试小结Ⅰ</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-05T17:26:22+08:00" content="2019-04-05">
-          04-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/01/初探jQuery/" itemprop="url">
-              
-                <span itemprop="name">初探jQuery</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-01T14:21:14+08:00" content="2019-04-01">
-          04-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
-  </div>
-  
-  
-  
-
-  
-
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">yyyh</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives">
-              
-                  <span class="site-state-item-count">29</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/18437956520" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
-  <span class="with-love">
-    <a href="https://yyyh.info" style="color: #31C2B3;"><i class="fa fa-meh-o"></i></a>
-  </span>
-  <span class="author" itemprop="copyrightHolder">yyyh</span>
-  
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">Site words total count&#58;</span>
-    
-    <span title="Site words total count">98.6k</span>
-  
 </div>
 
 
+<script src="/js/white.js"></script>
 
-
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
 
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
+      <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
     
 
-    
 
-  </div>
 
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-  
-
-  
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":1,"width":100,"height":200,"position":"left","hOffset":0,"vOffset":-20},"react":{"opacityDefault":0.8,"opacityOnHover":1},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
-<!--崩溃欺骗-->
-<!-- <script type="text/javascript" src="/js/src/crash_cheat.js"></script> -->
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
 </html>
